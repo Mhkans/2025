@@ -24,10 +24,25 @@
     <ClCompile Include="03.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="08.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="09.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="04.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="05.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="06.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="07.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="10.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,5 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/86053
-
+//https://yabmoons.tistory.com/714
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -25,8 +25,7 @@ using namespace std;
 long long solution(int a, int b, vector<int> g, vector<int> s, vector<int> w, vector<int> t) {
 
 	long long answer = -1;
-	//1시간당 이동가능량
-	vector<int> capacity 
+	
 	
 	return answer;
 }

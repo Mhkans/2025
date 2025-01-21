@@ -13,26 +13,34 @@
 #include <memory>
 
 using namespace std;
+void DFS(int target, vector<int> numbers, int count, int& answer, int& num) {
+    if (count == numbers.size()) {
+        return;
+    }
+    int plusNum = num + numbers[count];
+    if (target == plusNum && count == numbers.size() - 1) {
+        answer++;
+    }
+    int minNum = num - numbers[count];
+    if (target == minNum && count == numbers.size() - 1) {
+        answer++;
+    }
+    DFS(target, numbers, count + 1, answer, plusNum);
+    DFS(target, numbers, count + 1, answer, minNum);
 
-vector<bool> visited;
-
+}
 int solution(vector<int> numbers, int target) {
     int answer = 0;
-   
-    visited.resize(numbers.size(), false);
+    int acc = 0;
 
+    DFS(target, numbers, 0, answer, acc);
+    
     return answer;
 }
-void DFS(int start, vector<int> numbers, int num) {
 
-    for (int i = 0; i < numbers.size(); i++) {
-
-
-    }
-}
 int main() {
 
-   
+    cout << solution({ 4, 1, 2, 1 },4);
 
     return 0;
 }
