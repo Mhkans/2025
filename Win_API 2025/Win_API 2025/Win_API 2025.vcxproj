@@ -132,18 +132,72 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Math\DisjointSet.h" />
+    <ClInclude Include="Objects\Arkanoid\A_ball.h" />
+    <ClInclude Include="Objects\Arkanoid\Brick.h" />
+    <ClInclude Include="Objects\Arkanoid\Arkanoid.h" />
+    <ClInclude Include="Objects\Arkanoid\Paddle.h" />
+    <ClInclude Include="Objects\Maze\Player.h" />
+    <ClInclude Include="Scene\ArkanoidScene.h" />
+    <ClInclude Include="Objects\Maze\Maze.h" />
+    <ClInclude Include="Objects\Maze\Block.h" />
+    <ClInclude Include="Scene\MazeScene.h" />
+    <ClInclude Include="Objects\Cannon\Ball_base.h" />
+    <ClInclude Include="Objects\Cannon\Ball_missile.h" />
+    <ClInclude Include="Objects\Cannon\Ball_pendulum.h" />
+    <ClInclude Include="Objects\Cannon\Ball.h" />
+    <ClInclude Include="Objects\Cannon\Barrel.h" />
+    <ClInclude Include="Objects\Cannon\Cannon.h" />
+    <ClInclude Include="Scene\CannonScene.h" />
+    <ClInclude Include="Math\Collider\Collider.h" />
+    <ClInclude Include="Scene\LineCollisionScene.h" />
+    <ClInclude Include="Math\Line.h" />
+    <ClInclude Include="Scene\LineScene.h" />
+    <ClInclude Include="Scene\CollisionScene.h" />
+    <ClInclude Include="GMacro.h" />
+    <ClInclude Include="Math\Collider\CircleCollider.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Math\Vector.h" />
+    <ClInclude Include="Math\Collider\RectCollider.h" />
+    <ClInclude Include="Scene\PaintScene.h" />
+    <ClInclude Include="Program\Program.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Win_API 2025.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Objects\Arkanoid\A_ball.cpp" />
+    <ClCompile Include="Objects\Arkanoid\Brick.cpp" />
+    <ClCompile Include="Objects\Arkanoid\Arkanoid.cpp" />
+    <ClCompile Include="Objects\Arkanoid\Paddle.cpp" />
+    <ClCompile Include="Objects\Maze\Player.cpp" />
+    <ClCompile Include="Scene\ArkanoidScene.cpp" />
+    <ClCompile Include="Objects\Maze\Maze.cpp" />
+    <ClCompile Include="Objects\Maze\Block.cpp" />
+    <ClCompile Include="Scene\MazeScene.cpp" />
+    <ClCompile Include="Objects\Cannon\Ball_base.cpp" />
+    <ClCompile Include="Objects\Cannon\Ball_missile.cpp" />
+    <ClCompile Include="Objects\Cannon\Ball_pendulum.cpp" />
+    <ClCompile Include="Objects\Cannon\Ball.cpp" />
+    <ClCompile Include="Objects\Cannon\Barrel.cpp" />
+    <ClCompile Include="Objects\Cannon\Cannon.cpp" />
+    <ClCompile Include="Scene\CannonScene.cpp" />
+    <ClCompile Include="Math\Collider\Collider.cpp" />
+    <ClCompile Include="Scene\LineCollisionScene.cpp" />
+    <ClCompile Include="Math\Line.cpp" />
+    <ClCompile Include="Scene\LineScene.cpp" />
+    <ClCompile Include="Scene\CollisionScene.cpp" />
+    <ClCompile Include="Math\Collider\CircleCollider.cpp" />
     <ClCompile Include="framework.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">framework.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="Math\Vector.cpp" />
+    <ClCompile Include="Math\Collider\RectCollider.cpp" />
+    <ClCompile Include="Scene\PaintScene.cpp" />
+    <ClCompile Include="Program\Program.cpp" />
+    <ClCompile Include="Scene\Scene.cpp" />
     <ClCompile Include="Win_API 2025.cpp" />
   </ItemGroup>
   <ItemGroup>

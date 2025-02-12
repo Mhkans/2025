@@ -13,7 +13,7 @@ HWND hWnd; //윈도우 핸들: 윈도우에서 발생하는 일들을 제어하�
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
-Vector CircleCenter;
+
            
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -101,8 +101,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-   hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+   hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, 0, 0, WIN_WIDTH, WIN_HEIGHT, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {
@@ -127,6 +126,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 
 Vector mousePos;
+shared_ptr<Program> program;
+
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -151,7 +152,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     break;
     case WM_CREATE: {
         //처음 창이 생성됐을때 나오는 메세지
-
+        program = make_shared<Program>();
         SetTimer(hWnd, 1, 1, nullptr);//1ms마다 msg생성
         break;
     }
@@ -159,8 +160,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
         //delay마다 메세지 호출
 
-
-        InvalidateRect(hWnd, nullptr, true); //윈도우 페인트 메세지를 호출하고 지워줌 false는 안지움
+        program->Update();
+        InvalidateRect(hWnd, nullptr, false); //윈도우 페인트 메세지를 호출하고 지워줌 false는 안지움
         break;
         
     }
@@ -175,15 +176,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         {
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-            CircleCenter = LERP(CircleCenter, mousePos, 0.2f);
             
-
-            Ellipse(hdc, CircleCenter.x-35, CircleCenter.y-35, CircleCenter.x + 35, CircleCenter.y+35);
-            Rectangle(hdc, mousePos.x-25, mousePos.y-25, mousePos.x+25, mousePos.y+25);
-
-            MoveToEx(hdc, 450, 350, nullptr);
-            LineTo(hdc, mousePos.x, mousePos.y);
+            program->Render(hdc);
+            
             EndPaint(hWnd, &ps);
         }
         break;

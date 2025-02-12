@@ -10,26 +10,38 @@
 #include <windows.h>
 // C 런타임 헤더 파일입니다.
 #include <stdlib.h>
+#include <iostream>
 #include <malloc.h>
 #include <memory.h>
+#include<memory>
 #include <tchar.h>
-#include <memory>
-#include <vector>
-#include <unordered_map>
-#include <queue>
-#include <algorithm>
-#include <string>
-#include <functional>
-#include <time.h>
+#include<vector>
+#include<unordered_map>
+#include<algorithm>
+#include<string>
+#include<functional>
+#include<stack>
+#include<queue>
 
 using namespace std;
-
+//Macro
+#include"GMacro.h"
 
 // Math
 #include "Math/Vector.h"
+#include"Math/Line.h"
+#include"Math/DisjointSet.h"
+
+#include"Math/Collider/Collider.h"
+#include "Math/Collider/CircleCollider.h"
+#include "Math/Collider/RectCollider.h"
+//Scene
+#include"Scene/Scene.h"
+
+
+//Program
+#include"Program/Program.h"
+
 
 extern Vector mousePos;
 extern HWND hWnd;
-
-
-#define LERP(s,e,t) s + (e-s)*t

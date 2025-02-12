@@ -1,117 +1,113 @@
-#pragma once
-#include <math.h>
-
-struct Vector {
-
+﻿#pragma once
+class Vector
+{
 public:
-    Vector() :x(0.0f), y(0.0f) {}
-    Vector(float x, float y) : x(x), y(y) {}
-    Vector(const Vector& other) : x(other.x), y(other.y) {}
-    ~Vector() {}
+	Vector() : x(0.0f), y(0.0f) {}
+	Vector(float x, float y)
+	{
+		this->x = x;
+		this->y = y;
+	}
+	~Vector() {}
 
-    float Dot(const Vector& other)
-    {
-        float result;
-        result = (this->x * other.x) + (this->y * other.y);
+	Vector operator+(const Vector& other) const
+	{
+		Vector result;
+		result.x = this->x + other.x;
+		result.y = this->y + other.y;
 
-        return result;
-    }
-    float Cross(const Vector& other) 
-    {
-        float result;
-        result = (this->x * other.y) - (this->y * other.x);
+		return Vector(this->x + other.x, this->y + other.y);
+	}
+	Vector operator-(const Vector& other) const
+	{
+		Vector result;
+		result.x = x - other.x;
+		result.y = y - other.y;
 
-        return result;
-    }
-    float Length() const 
-    {
+		return result;
+	}
+	Vector operator*(float value) const
+	{
+		Vector result;
+		result.x = this->x * value;
+		result.y = this->y * value;
 
-        return sqrtf((x * x) + (y * y));
-    }
+		return result;
+	}
+	Vector& operator=(const Vector& other)
+	{
+		this->x = other.x;
+		this->y = other.y;
 
-    Vector operator+(const Vector& other) const 
-    {
+		return *this;
+	}
+	Vector& operator+=(const Vector& other)
+	{
+		x += other.x;
+		y += other.y;
 
-        Vector result;
+		return *this;
+	}
+	Vector& operator-=(const Vector& other)
+	{
+		x -= other.x;
+		y -= other.y;
 
-        result.x = this->x + other.x;
-        result.y = this->y + other.y;
+		return *this;
+	}
 
-        return result;
-    }
-    Vector operator-(const Vector& other) const
-    {
-        Vector result;
+	float Length() const
+	{
+		return sqrtf(this->x * this->x + this->y * this->y);
+	}
+	void Noraml()
+	{
+		float length = Length();
+		x /= length;
+		y /= length;
+	}
 
-        result.x = this->x - other.x;
-        result.y = this->y - other.y;
+	Vector Nomalize() const
+	{
+		Vector result = *this;
+		result.Noraml();
+		return result;
+	}
 
-        return result;
-    }
-    Vector operator*(const float& value) const
-    {
-        return Vector(x * value, y * value);
-    }
-    Vector NormalVector() const
-    {
-        float length = Length();
+	float Dot(const Vector& other) const
+	{
+		return x * other.x + y * other.y;
+	}
+	float Cross(const Vector& other) const
+	{
+		return x * other.y - y * other.x;
+	}
 
-        return Vector(x / length, y / length);
-    }
+	bool IsBetween(const Vector& v1, const Vector& v2)
+	{
+		float cross1 = this->Cross(v1);
+		float cross2 = this->Cross(v2);
 
-    Vector& operator=(const Vector& other)
-    {
-        x = other.x;
-        y = other.y;
+		return cross1 * cross2 < 0;
+	}
+	void Rotate(float angle) {
 
-        return *this;
-    }
-    Vector& operator+=(const Vector& other)
-    {
-        x += other.x;
-        y += other.y;
-
-        return *this;
-    }
-    Vector& operator-=(const Vector& other)
-    {
-        x -= other.x;
-        y -= other.y;
-
-        return *this;
-    }
-
-    bool operator==(const Vector& other)
-    {
-        if(x != other.x) return false;
-        if(y != other.y) return false;
-
-        return true;
-    }
-    bool operator!=(const Vector& other)
-    {
-        return !this->operator==(other);
-    }
-
-    void Normalize()
-    {
-        float length = Length();
-
-        x /= length;
-        y /= length;
-    }
-
-    float Angle() const
-    {
-        return atan2(y,x);
-    }
-
-    float Angle(const Vector& other)
-    {
-        return Angle() - other.Angle();
-    }
-
-public:
-    float x;
-    float y;
+		x = x * cosf(angle) - y * sinf(angle);
+		y = x * sinf(angle) + y * cosf(angle);
+	}
+	bool operator==(const Vector& other) const {
+		if (x == other.x && y == other.y) {
+			return true;
+		}
+		return false;
+	}
+	bool operator!=(const Vector& other) const {
+		return !this->operator==(other);
+	}
+	float Manhattan_distance(Vector pos) {
+		Vector temp = pos - *this;
+		return abs(temp.x) + abs(temp.y);
+	}
+	float x;
+	float y;
 };

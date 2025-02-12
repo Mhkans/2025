@@ -15,7 +15,6 @@
 
 using namespace std;
 
-
 vector<bool> visited;
 int maxNum = 0;
 void DFS(vector<vector<int>> d, int k, int here, int num) {
@@ -34,20 +33,23 @@ void DFS(vector<vector<int>> d, int k, int here, int num) {
         DFS(d, k - d[i][1], i, num + 1);
         visited[i] = false;
     }
+    visited[here] = false;
 }
 
 int solution(int k, vector<vector<int>> dungeons) {
     visited.resize(dungeons.size(), false);
+
     dungeons.erase(std::remove_if(dungeons.begin(), dungeons.end(), [k](const vector<int>& a) {
         return a[0] > k;
     }), dungeons.end());
     for (int i = 0; i < dungeons.size(); i++) {
 
-        DFS(dungeons, k, i, 1);
+        DFS(dungeons, k - dungeons[i][1], i, 1);
 
     }
     return maxNum;
 }
+
 int main() {
 
     cout << solution(80, { {90,10},{80,20},{50,40,},{30,10},{85,25} });
