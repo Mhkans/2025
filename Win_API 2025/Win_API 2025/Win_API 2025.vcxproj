@@ -132,6 +132,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Objects\Arkanoid\Arkanoid_UI.h" />
+    <ClInclude Include="Objects\Arkanoid\Brick_Wall.h" />
+    <ClInclude Include="Objects\Arkanoid\Brick_Item.h" />
+    <ClInclude Include="Objects\Arkanoid\Item.h" />
     <ClInclude Include="Math\DisjointSet.h" />
     <ClInclude Include="Objects\Arkanoid\A_ball.h" />
     <ClInclude Include="Objects\Arkanoid\Brick.h" />
@@ -167,6 +171,10 @@
     <ClInclude Include="Win_API 2025.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Objects\Arkanoid\Arkanoid_UI.cpp" />
+    <ClCompile Include="Objects\Arkanoid\Brick_Wall.cpp" />
+    <ClCompile Include="Objects\Arkanoid\Brick_Item.cpp" />
+    <ClCompile Include="Objects\Arkanoid\Item.cpp" />
     <ClCompile Include="Objects\Arkanoid\A_ball.cpp" />
     <ClCompile Include="Objects\Arkanoid\Brick.cpp" />
     <ClCompile Include="Objects\Arkanoid\Arkanoid.cpp" />

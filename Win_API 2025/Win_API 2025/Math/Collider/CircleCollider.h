@@ -16,7 +16,7 @@ public:
 	bool IsCollision(shared_ptr<class RectCollider> other);
 	bool IsCollision(const Vector& pos);
 
-private:
+protected:
 	
 	float _radius;
 };

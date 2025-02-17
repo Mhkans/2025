@@ -7,11 +7,16 @@ public:
 
 	void Update() override;
 	void Render(HDC hdc) override;
-	//떨어지면 라이프감소
-	//특수아이템 enum class
-private:
-	//7 X 3 벽돌과 바를 가지는 알카노이드 
-	shared_ptr<class Arkanoid> _arkanoid;
 	
+	void GetItem(shared_ptr<class Item> item);
+private:
+	
+	shared_ptr<class Arkanoid> _arkanoid;
+	shared_ptr<class Paddle> _paddle;
+	shared_ptr<class Arkanoid_UI> _UI;
+
+	int _lifeCount = 5;
+	const int& _maxHP = 5;
+	bool isDead = false;
 };
 
