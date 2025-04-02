@@ -175,7 +175,10 @@
     <ClCompile Include="13DynamicProgramming(3).cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="13DynamicProgramming(4).cpp" />
+    <ClCompile Include="13DynamicProgramming(4).cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="13DynamicProgramming(5).cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="12BinartySearchTree.h">
