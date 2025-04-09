@@ -38,9 +38,9 @@ USE BaseballData
 --GROUP BY teamID
 
 --salaries 테이블에서 연도별로 최고의 salary와 최저의 salary를 출력해주세요
-SELECT MIN(salary)AS minSalary ,MAX(salary) AS maxSalary, yearID
-FROM dbo.salaries
-GROUP BY yearID
+--SELECT MIN(salary)AS minSalary ,MAX(salary) AS maxSalary, yearID
+--FROM dbo.salaries
+--GROUP BY yearID
 
 
 --프로그래머스
