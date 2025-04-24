@@ -11,7 +11,14 @@ atomimc
 - all or nothing
 한 작업단위로 묶음
 
-세마포어 -> refCount를 관리
+CPU 파이프라인
+Fetch : 읽기
+Decode : 해석
+Excute : 실행
+Memory Access : 메모리접근
+
+세마포어 -> refCount를 올리거나 감소시키면서 관리
+
 */
 
 atomic<int> sum = 0;

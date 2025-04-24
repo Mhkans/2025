@@ -9,7 +9,7 @@ using namespace std;
 
 /*
 lock
-mutex
+mutex - 자물쇠 개념
 RAII - Resource Acquisition Is Initialization ,객체가 생성될 때 자원을 획득하고, 객체가 소멸될 때 자원을 해제하는 디자인 패턴
 */
 
