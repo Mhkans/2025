@@ -27,19 +27,17 @@
     <ClCompile Include="04DeadLock.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="00Account.cpp">
+    <ClCompile Include="05Lock_1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="00User.cpp">
+    <ClCompile Include="00Exercise_01.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="00Account.h">
+    <ClCompile Include="06Lock_2.cpp">
       <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="00User.h">
+    </ClCompile>
+    <ClCompile Include="07Lock_3.cpp">
       <Filter>소스 파일</Filter>
-    </ClInclude>
+    </ClCompile>
   </ItemGroup>
 </Project>
