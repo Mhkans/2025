@@ -31,7 +31,8 @@ void Produce() {
 
 void Consume() {
 	while (true) {
-		unique_lock<mutex> lg(m);
+		unique_lock<mutex> lg(m);//cv 에서 조건을 확인하고 만족하지 않으면 mutex 해제
+		
 		cv.wait(lg, []() {
 
 			return !q.empty();
